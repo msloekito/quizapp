@@ -8,7 +8,7 @@ html {
   background-size: cover;
 }
 
-.question1 {
+#q1 {
 	background-color: #0ac5f9;
 	background-size: fill;
 	margin: 0;
@@ -16,7 +16,11 @@ html {
 	height: 700px;
 }
 
-.question1 > h1 {
+#q2, #q3, #q4, #q5, #listanswer2, #listanswer3, #listanswer4, #listanswer5, #resultspage  {
+	display: none;
+}
+
+h1 {
 	font-family: 'Open Sans', sans-serif;
 	color: white;
 	font-size: 2rem;	
@@ -30,7 +34,7 @@ html {
 	transform: translate(-50%, -50%); 
 }
 
-.question1 > .answer1 {
+.answer1 {
 	font-family: 'Open Sans', sans-serif;
 	color: white;
 	font-size: 1rem;	
@@ -44,7 +48,7 @@ html {
 	transform: translate(-50%, -50%); 
 }
 
-.listanswer1 > li {
+li {
 	display: inline-block;
 	list-style-type: none;
 	width: 10%;
@@ -53,8 +57,7 @@ html {
 	border: red 1px solid;
 	padding: 1rem;
 }
-
-.listanswer1 > li:hover {
+li:hover {
 	background-color: #007ACC;
 	cursor: pointer;
  }
