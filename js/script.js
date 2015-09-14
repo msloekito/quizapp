@@ -6,24 +6,39 @@ $(document).ready(function(){
 	var page = 1
 	var score = 0
 	/*--creating object as template for questions--*/
-	function Question(prompt, answers, correctAnswer, questionNumber, validateAnswer) { //need to put option1 2 3 back if this doesn't work
+	function Question(prompt, answers, correctAnswer, questionNumber, validateAnswer) {
 		this.prompt = prompt;
 		this.answers = answers;
 		this.correctAnswer = correctAnswer;
 		this.questionNumber = questionNumber;
-		/*this.option1 = option1;
-		this.option2 = option2;
-		this.option3 = option3;*/
 		this.validateAnswer = function() {
 			var selectedAnswer = $(".selected").text();
 			var rightAnswer = this.correctAnswer;
 			console.log(selectedAnswer);
-			//console.log(rightAnswer);
+			console.log(page);
 			if (selectedAnswer == rightAnswer) {
-			console.log("you got it!");
-			score = score + 1 
+			console.log("the right answer");
+			score = score + 1;
+			page = page + 1; 
 			}
-		}
+			else if (selectedAnswer == "") {
+				alert("Please choose an answer");
+			}
+			else if (selectedAnswer != rightAnswer) {
+			console.log("that's not the right answer");
+			score = score + 0;
+			page = page + 1;
+			}
+			// else {
+			// 	page = page + 1;
+			// }
+			// else if (selectedAnswer != rightAnswer) {
+			// console.log("not the right answer");
+			// score = score + 0;
+			// page = page + 1;
+			// }
+			
+			}
 		};
 	
 	/*--creating each questions using object template--*/
@@ -109,38 +124,51 @@ $(document).ready(function(){
 	})*/
 
 	$(".button").on("click", function(){		
-		question1.validateAnswer();
-		question2.validateAnswer();
-		question3.validateAnswer();
-		question4.validateAnswer();
-		question5.validateAnswer();
-		page = page + 1;
-		console.log("page number " + page);
-		console.log(score);
+		// question1.validateAnswer();
+		// question2.validateAnswer();
+		// question3.validateAnswer();
+		// question4.validateAnswer();
+		// question5.validateAnswer();
 		if (page == 1) {
+			question1.validateAnswer();
+			console.log("page number " + page);
+			console.log("current score is " + score);
+			console.log("page 1 exclusive notice")
 			$("#q2, #q3, #q4, #q5").hide();
 			$("#listanswer2, #listanswer3, #listanswer4, #listanswer5").hide();
-			console.log("page 1")
 			}
 		else if (page == 2) {
+			question2.validateAnswer();
+			console.log("page number " + page);
+			console.log("current score is " + score);
+			console.log("page 2 exclusive notice")
 			$("#q1, #q3, #q4, #q5").hide();
 			$("#q2").show();
 			$("#listanswer1, #listanswer3, #listanswer4, #listanswer5").hide();
 			$("#listanswer2").show();
 			}
 		else if (page == 3) {
+			question3.validateAnswer();
+			console.log("page number " + page);
+			console.log("current score is " + score);
 			$("#q1, #q2, #q4, #q5").hide();
 			$("#q3").show();
 			$("#listanswer1, #listanswer2, #listanswer4, #listanswer5").hide();
 			$("#listanswer3").show();
 			}
 		else if (page == 4) {
+			question4.validateAnswer();
+			console.log("page number " + page);
+			console.log("current score is " + score);
 			$("#q1, #q2, #q3, #q5").hide();
 			$("#q4").show();
 			$("#listanswer1, #listanswer2, #listanswer3, #listanswer5").hide();
 			$("#listanswer4").show();
 			}
 		else if (page == 5) {
+			question5.validateAnswer();
+			console.log("page number " + page);
+			console.log("current score is " + score);
 			$("#q1, #q2, #q3, #q4").hide();
 			$("#q5").show();
 			$("#listanswer1, #listanswer2, #listanswer3, #listanswer4").hide();
