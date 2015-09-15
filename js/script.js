@@ -18,7 +18,6 @@ $(document).ready(function(){
 			var selectedAnswer = $(".selected").text();
 			var rightAnswer = this.correctAnswer;
 			console.log("selected answer is " + selectedAnswer);
-			// console.log("page number is" + page);
 			if (selectedAnswer == rightAnswer) {
 			console.log("the right answer");
 			score = score + 1;
@@ -32,15 +31,7 @@ $(document).ready(function(){
 			score = score + 0;
 			page ++;
 			}
-			// else {
-			// 	page = page + 1;
-			// }
-			// else if (selectedAnswer != rightAnswer) {
-			// console.log("not the right answer");
-			// score = score + 0;
-			// page = page + 1;
-			// }
-			
+		
 			}
 		};
 	
@@ -108,23 +99,6 @@ $(document).ready(function(){
 	var questionAnswers4 = document.getElementById('q5option4');
 	questionAnswers4.textContent = question5.answers[3]; 
 
-	/*function chooseAnswer() {
-	var selectedAnswer = $(".selected").text();
-	console.log(selectedAnswer);
-	if (selectedAnswer == question1.correctAnswer) {
-		alert("you got it!")
-	}
-	}
-	
-	function validateAnswer() {
-
-	}*/
-	/*$(".button").on("click", function(){
-		var correct = $("#q1prompt")[0].validateAnswer();
-		if (correct === true) {
-			console.log("correct answer")
-		}
-	})*/
 
 	$(".button").on("click", function(){		
 		if (page == 1){
@@ -202,8 +176,3 @@ $(document).ready(function(){
 	})
 
  }) //closing of the document ready opening
-
-
-
-
-	
